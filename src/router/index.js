@@ -1,14 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Login from '../views/Login.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    //path: '/',
+    //name: 'home',
+    //component: HomeView
+    //By default we will point login page as first page after opening website
+    path: '/',// '/' this is home page/ default page
+    name: 'login',
+    component: Login
   },
   {
     path: '/about',
