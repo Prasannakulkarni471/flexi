@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-header title="Books" @add="$router.push('/books/0')" @search="(serachList($event))"></app-header>
+        <app-header title="चालू घडामोडी" @add="$router.push('/books/0')" @search="(serachList($event))"></app-header>
         <v-list dense>
             <v-list-item v-for="(item, i) in books" :key="i">
                 <v-list-item-avatar tile>
@@ -8,8 +8,7 @@
                 </v-list-item-avatar>
 
                 <v-list-item-content>
-                    <v-list-item-title>{{ item.title }}</v-list-item-title>
-                    <v-list-item-subtitle>{{ item.author.name }}</v-list-item-subtitle>
+                    <v-list-item-title>{{ item.title }}</v-list-item-title> 
                     <v-list-item-subtitle>Pages: {{ item.pages }}</v-list-item-subtitle>
                 </v-list-item-content>
 
@@ -23,20 +22,12 @@
                             </template>
                             <v-list>
                                 <v-list-item>
-                                    <v-list-item-title @click="$router.push('/books/'+item._id)">Edit </v-list-item-title>
-                                    <v-icon>mdi-pencil</v-icon>
+                                    <v-list-item-title @click="$router.push('/books/'+item._id)">View </v-list-item-title>
+                                    <v-icon>mdi-eye</v-icon>
                                 </v-list-item>
                                 <v-list-item>
-                                    <v-list-item-title>Delete </v-list-item-title>
-                                    <v-icon>mdi-delete</v-icon>
-                                </v-list-item>
-                                <v-list-item>
-                                    <v-list-item-title>Issue </v-list-item-title>
-                                    <v-icon>mdi-pencil</v-icon>
-                                </v-list-item>
-                                <v-list-item>
-                                    <v-list-item-title>Return </v-list-item-title>
-                                    <v-icon>mdi-pencil</v-icon>
+                                    <v-list-item-title>Download </v-list-item-title>
+                                    <v-icon>mdi-download</v-icon>
                                 </v-list-item>
                             </v-list>
                         </v-menu>

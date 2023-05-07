@@ -1,4 +1,4 @@
 // AppConstnats.js
 export default Object.freeze({
-    APP_NAME: "Librarian"
+    APP_NAME: "SPARDHA_TODAY"
 })

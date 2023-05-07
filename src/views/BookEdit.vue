@@ -1,10 +1,11 @@
 <template>
     <div>
-        <h1>{{ id!=0 ? "Edit" : "Add" }} Book</h1>
+        <h1>{{ books.title }}</h1>
         <v-form>
-            <v-text-field label="Title" v-model="books.title"></v-text-field>
-            <v-textarea label="Description" v-model="books.description"></v-textarea>
+            <v-text-field  v-model="books.title"></v-text-field>
+            
         </v-form>
+        <v-img :src="books.img"></v-img>
     </div>
 </template>
 

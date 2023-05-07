@@ -12,8 +12,8 @@ const routes = [
     //component: HomeView
     //By default we will point login page as first page after opening website
     path: '/',// '/' this is home page/ default page
-    name: 'login',
-    component: Login
+    name: 'homeview',
+    component: () => import(/* webpackChunkName: "about" */ '../views/HomeView.vue')
   },
   {
     path: '/about',
@@ -29,6 +29,11 @@ const routes = [
     component: () => import( '../views/Books.vue')
   },
   {
+    path: '/mainpage',
+    name: 'mainpage',
+    component: () => import( '../views/MainPage.vue')
+  },
+  {
     path: '/author',
     name: 'author',
     component: () => import( '../views/Author.vue')
@@ -37,6 +42,16 @@ const routes = [
     path: '/issues',
     name: 'issues',
     component: () => import( '../views/Issues.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import( '../views/Login.vue')
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import( '../views/SignUp.vue')
   },
   {
     path: '/members',

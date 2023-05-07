@@ -1,19 +1,26 @@
 <template>
     <v-bottom-navigation v-model="value" app>
-        <v-btn value="recent" @click="$router.push('/Books')">
-            <span>Books</span>
+        <v-btn value="recent" color="indigo" @click="$router.push('/')" >
+            <span>
+मुख्यपृष्ठ</span>
+
+            <v-icon>mdi-home</v-icon>
+        </v-btn>
+        <v-spacer></v-spacer>
+        <v-btn value="favorites" @click="$router.push('/Books')">
+            <span>चालू घडामोडी</span>
 
             <v-icon>mdi-bookshelf</v-icon>
         </v-btn>
+        <v-spacer></v-spacer>
+        <v-btn value="nearby" @click="$router.push('/')">
+            <span>खाते</span>
 
-        <v-btn value="favorites">
-            <span>Authors</span>
-
-            <v-icon>mdi-person</v-icon>
+            <v-icon>mdi-ballot</v-icon>
         </v-btn>
-
-        <v-btn value="nearby">
-            <span>Members</span>
+        <v-spacer></v-spacer>
+        <v-btn value="nearby" @click="$router.push('/')">
+            <span>माझे डाउनलोड</span>
 
             <v-icon>mdi-ballot</v-icon>
         </v-btn>
