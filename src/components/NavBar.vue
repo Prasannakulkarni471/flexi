@@ -20,7 +20,7 @@
       <v-spacer></v-spacer>
 
       <v-btn text>
-        मुख्यपृष्ठ
+        HELP
       </v-btn>
       <v-icon>mdi-account-circle</v-icon>
     </v-app-bar>

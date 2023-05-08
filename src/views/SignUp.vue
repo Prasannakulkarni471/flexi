@@ -9,6 +9,10 @@
                 <v-text-field label="Password" variant="solo" type="password" v-model="password"></v-text-field>
                 <v-text-field label="Confirm Password" variant="solo" type="password"></v-text-field>
                 <v-text-field label="Email" variant="solo" type="email"></v-text-field>
+                <v-text-field label="State" variant="solo" type="text"></v-text-field>
+                <v-text-field label="District" variant="solo" type="text"></v-text-field>
+                <v-text-field label="Mobile Number" variant="solo" type="number"></v-text-field>
+                <v-text-field label="OTP" variant="solo" type="otp"></v-text-field>
                 <router-link to="/MainPage"><v-btn class="base_inverted"  variant="tonal" @click="authenticate()">
                     Sign Up
                 </v-btn></router-link>

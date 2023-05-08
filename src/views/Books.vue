@@ -1,6 +1,99 @@
 <template>
     <div>
         <app-header title="चालू घडामोडी" @add="$router.push('/books/0')" @search="(serachList($event))"></app-header>
+        <v-row align="center">
+            <v-col align="center">
+            <v-btn class="ma-2" :loading="loading" :disabled="loading" color="secondary" @click="loader = 'loading'">
+                2022
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading4" :disabled="loading4" color="info" @click="loader = 'loading4'">
+                2023
+                <template v-slot:loader>
+                    <span class="custom-loader">
+                        <v-icon light>mdi-cached</v-icon>
+                    </span>
+                </template>
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading2" :disabled="loading2" color="success" @click="loader = 'loading2'">
+                2024
+                <template v-slot:loader>
+                    <span>Loading...</span>
+                </template>
+            </v-btn>
+        </v-col>
+        </v-row>
+        <v-row align="center">
+            <v-col align="center">
+            <v-btn class="ma-2" :loading="loading" :disabled="loading" color="secondary" @click="loader = 'loading'">
+                JAN
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading4" :disabled="loading4" color="info" @click="loader = 'loading4'">
+                FEB
+                <template v-slot:loader>
+                    <span class="custom-loader">
+                        <v-icon light>mdi-cached</v-icon>
+                    </span>
+                </template>
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading2" :disabled="loading2" color="success" @click="loader = 'loading2'">
+                MAR
+                <template v-slot:loader>
+                    <span>Loading...</span>
+                </template>
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading" :disabled="loading" color="secondary" @click="loader = 'loading'">
+                APR
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading4" :disabled="loading4" color="info" @click="loader = 'loading4'">
+                MAY
+                <template v-slot:loader>
+                    <span class="custom-loader">
+                        <v-icon light>mdi-cached</v-icon>
+                    </span>
+                </template>
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading2" :disabled="loading2" color="success" @click="loader = 'loading2'">
+                JUN
+                <template v-slot:loader>
+                    <span>Loading...</span>
+                </template>
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading" :disabled="loading" color="secondary" @click="loader = 'loading'">
+                JUL
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading4" :disabled="loading4" color="info" @click="loader = 'loading4'">
+                AUG
+                <template v-slot:loader>
+                    <span class="custom-loader">
+                        <v-icon light>mdi-cached</v-icon>
+                    </span>
+                </template>
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading2" :disabled="loading2" color="success" @click="loader = 'loading2'">
+                SEPT
+                <template v-slot:loader>
+                    <span>Loading...</span>
+                </template>
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading" :disabled="loading" color="secondary" @click="loader = 'loading'">
+                OCT
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading4" :disabled="loading4" color="info" @click="loader = 'loading4'">
+                NOV
+                <template v-slot:loader>
+                    <span class="custom-loader">
+                        <v-icon light>mdi-cached</v-icon>
+                    </span>
+                </template>
+            </v-btn>
+            <v-btn class="ma-2" :loading="loading2" :disabled="loading2" color="success" @click="loader = 'loading2'">
+                DEC
+                <template v-slot:loader>
+                    <span>Loading...</span>
+                </template>
+            </v-btn>
+        </v-col>
+        </v-row>
         <v-list dense>
             <v-list-item v-for="(item, i) in books" :key="i">
                 <v-list-item-avatar tile>
@@ -47,7 +140,23 @@ export default {
     data() {
         return {
             books: booksList,
+            loader: null,
+            loading: false,
+            loading2: false,
+            loading3: false,
+            loading4: false,
+            loading5: false,
         };
+    },
+    watch: {
+        loader() {
+            const l = this.loader
+            this[l] = !this[l]
+
+            setTimeout(() => (this[l] = false), 3000)
+
+            this.loader = null
+        },
     },
     methods: {
         serachList(text) {
@@ -58,4 +167,41 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.custom-loader {
+    animation: loader 1s infinite;
+    display: flex;
+  }
+  @-moz-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-o-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
