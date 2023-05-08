@@ -5,8 +5,8 @@
     <h1> SPARDHA TODAY </h1>
     <v-row>
       <v-col>
-        <router-link to="/Login"><v-btn class="bottomleft" color="indigo" variant="tonal" large >विद्यार्थी</v-btn></router-link>
-        <v-btn class="bottomright"  color="indigo" outlined large>शिक्षक</v-btn>
+        <router-link to="/Login"><v-btn class="bottomleft" color="indigo" variant="tonal" large >लॉगिन करा</v-btn></router-link>
+        <router-link to="/SignUp"><v-btn class="bottomright"  color="indigo" outlined large>नोंदणी करा</v-btn></router-link>
       </v-col>
     </v-row>
   </div>
